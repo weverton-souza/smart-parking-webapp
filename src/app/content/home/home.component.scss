@@ -1,0 +1,24 @@
+.example-card {
+    max-width: 200px;
+}
+
+.svg_vago {
+    // 34 9342-7141
+    min-height: 50px;
+    min-width: 50px;
+    fill: rgb(0, 196, 42);
+}
+
+.svg_ocupado {
+    min-height: 50px;
+    min-width: 50px;
+    fill: rgb(241, 128, 22);
+}
+
+.row__card-header {
+    justify-content: space-evenly;
+}
+
+.row__card-content {
+    justify-content: space-between;
+}

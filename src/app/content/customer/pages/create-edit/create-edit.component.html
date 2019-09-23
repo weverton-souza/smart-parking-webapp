@@ -1,0 +1,38 @@
+<app-bread-crumb
+[items]="[{text: 'Clientes', link:'/customer'}, {text: 'Adicionar cliente'}]"
+></app-bread-crumb>
+
+<form [formGroup]="customerForm">
+    <div class="card">
+        <div class="card-header">
+            {{ pageTitle }} 
+        </div>
+        <div class="card-body">
+            <div class="row row-custom">
+                <div class="col-md-6">
+                    <mat-form-field class="col-md-12">
+                        <input formControlName="name" matInput type="text" placeholder="Nome do cliente">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                    <mat-form-field class="col-md-12">
+                        <input formControlName="cpf" matInput mask="000.000.000-00" type="text" placeholder="CPF">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                    <mat-form-field class="col-md-12">
+                        <input formControlName="phoneNumber" matInput (input)="onChange($event.target.value)" [mask]="getPhonePattern()" type="text" placeholder="Telefone">
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="col-md">
+                <input type="button" routerLink="/customer" class="btn bg-light bg-light_color smart__card-footer" style="float: left;" value="Voltar">
+            </div>
+            <div class="col-md">
+                <input type="button" (click)="save(customerForm.value)" class="btn bg-light bg-light_color smart__card-footer" style="float: right;" value="Salvar">
+            </div>
+        </div>
+    </div>
+</form>

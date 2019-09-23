@@ -1,0 +1,38 @@
+<app-bread-crumb
+[items]="[{text: 'Vehícle', link:'/vehicle'}, {text: 'Adicionar cliente'}]"
+></app-bread-crumb>
+
+<form [formGroup]="vehicleForm">
+    <div class="card">
+        <div class="card-header">
+            {{ pageTitle }} 
+        </div>
+        <div class="card-body">
+            <div class="row row-custom">
+                <div class="col-md-6">
+                    <mat-form-field class="col-md-12">
+                        <input formControlName="model" class="uppercase" matInput type="text" placeholder="Modelo">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                    <mat-form-field class="col-md-12">
+                        <input formControlName="licencePlate" class="uppercase" matInput mask="AAA-0000" type="text" placeholder="Placa">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                    <mat-form-field class="col-md-12">
+                        <input formControlName="color" class="uppercase" matInput type="text" placeholder="Color">
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="col-md">
+                <input type="button" routerLink="/vehicle" class="btn bg-light bg-light_color smart__card-footer" style="float: left;" value="Voltar">
+            </div>
+            <div class="col-md">
+                <input type="button" (click)="save(vehicleForm.value)" class="btn bg-light bg-light_color smart__card-footer" style="float: right;" value="Salvar">
+            </div>
+        </div>
+    </div>
+</form>

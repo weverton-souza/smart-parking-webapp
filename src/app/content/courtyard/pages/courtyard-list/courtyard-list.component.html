@@ -1,0 +1,38 @@
+<app-bread-crumb
+[items]="[{text: 'Pátio', link:'/courtyard'}]"
+></app-bread-crumb>
+
+<div class="row  mb-4">
+    <div class="col-md">
+      <h1 class="h2 border-left pl-2">
+        Pátio
+      </h1>
+    </div>
+    <div class="col-md">
+      <a routerLink="create" class="btn btn-success float-right"> + Novo Pátio</a>
+    </div>
+  </div>
+  
+<table class="table table-hover">
+  <thead>
+    <tr class="bg-primary text-light">
+      <th>Nome</th>
+      <th>Vagas</th>
+      <th>Valor/hoje</th>
+      <th>Descrição</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let courtyard of courtyards$ | async">
+      <td>{{ courtyard.name }}</td>
+      <td>{{ courtyard.numberOfVacancies }}</td>
+      <td>{{ courtyard.hourlyRate }}</td>
+      <td>{{ courtyard.description }}</td>
+    <td  style="width: 25vw">
+      <a routerLink="update" (click)="edit(courtyard)" class="btn btn-outline-info btn-sm mr-2 wd__btn">Editar</a>
+      <button (click)="delete(courtyard)" class="btn btn-outline-danger btn-sm wd__btn">Excluir</button>
+    </td>
+    </tr>
+  </tbody>
+</table>

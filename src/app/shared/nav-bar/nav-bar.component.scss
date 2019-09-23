@@ -1,0 +1,19 @@
+.bg-light {
+    background-image: linear-gradient(to right top, #3f729b, #41739b, #44749b, #46759b, #48769b);
+}
+
+.navbar-light .navbar-brand {
+    color: rgba(253, 253, 253, 0.9);
+}
+
+.navbar-light
+.navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+    color: rgba(253, 253, 253, 0.9);
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #76A6D2;
+}

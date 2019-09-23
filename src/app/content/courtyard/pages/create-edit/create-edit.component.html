@@ -1,0 +1,46 @@
+<app-bread-crumb
+[items]="[{text: 'Pátio', link:'/courtyard'}, {text: 'Adicionar Pátio'}]"
+></app-bread-crumb>
+
+<form [formGroup]="courtyardForm">
+    <div class="card">
+        <div class="card-header">
+            {{ pageTitle }} 
+        </div>
+        <div class="card-body">
+            <div class="row row-custom">
+                <div class="col-md-4">
+                    <mat-form-field class="col-md-12">
+                        <input formControlName="name" matInput type="text" placeholder="Nome do pátio">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                    <mat-form-field class="col-md-12">
+                        <input formControlName="numberOfVacancies" matInput mask="000" type="text" placeholder="Número de vagas">
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-md-4">
+                    <mat-form-field class="col-md-12">
+                        <input formControlName="hourlyRate" matInput prefix="R$ " mask="0,00" type="text" placeholder="Valor/Hora">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row row-custom">
+                <div class="col-md-12">
+                    <mat-form-field class="col-md-12">
+                        <input formControlName="description" matInput type="text" placeholder="Descrição">
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="col-md">
+                <input type="button" routerLink="/courtyard" class="btn bg-light bg-light_color smart__card-footer" style="float: left;" value="Voltar">
+            </div>
+            <div class="col-md">
+                <input type="button" (click)="save(courtyardForm.value)" class="btn bg-light bg-light_color smart__card-footer" style="float: right;" value="Salvar">
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,1 @@
+export { fromUtils } from './type-cache';
